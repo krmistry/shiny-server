@@ -298,25 +298,25 @@ server <- function(input, output, session) {
                         value = min(stock_region_data[, 2]))
       }
 
-      # Update size scale options based on what data is available for each stock:
-      if (all(is.na(stock_region_data$MSY)) == TRUE) {
-        updateSelectInput(session, "size", "Choose variable for point size:",
-                          c("Catch" = "Catch",
-                            "Productivity" = "Surprod"))
-      } else if (all(is.na(stock_region_data$Catch)) == TRUE) {
-        updateSelectInput(session, "size", "Choose variable for point size:",
-                          c("MSY" = "MSY",
-                            "Productivity" = "Surprod"))
-      } else if (all(is.na(stock_region_data$Surprod)) == TRUE) {
-        updateSelectInput(session, "size", "Choose variable for point size:",
-                          c("MSY" = "MSY",
-                            "Catch" = "Catch"))
-      } else { #at the moment, didn't include options if more than 1 size scale is missing
-        updateSelectInput(session, "size", "Choose variable for point size:",
-                          c("MSY" = "MSY",
-                            "Catch" = "Catch",
-                            "Productivity" = "Surprod"))
-      }
+  #    # Update size scale options based on what data is available for each stock:
+  #    if (all(is.na(stock_region_data$MSY)) == TRUE) {
+  #      updateSelectInput(session, "size", "Choose variable for point size:",
+  #                        c("Catch" = "Catch",
+  #                          "Productivity" = "Surprod"))
+  #    } else if (all(is.na(stock_region_data$Catch)) == TRUE) {
+  #      updateSelectInput(session, "size", "Choose variable for point size:",
+  #                        c("MSY" = "MSY",
+  #                          "Productivity" = "Surprod"))
+  #    } else if (all(is.na(stock_region_data$Surprod)) == TRUE) {
+  #      updateSelectInput(session, "size", "Choose variable for point size:",
+  #                        c("MSY" = "MSY",
+  #                          "Catch" = "Catch"))
+  #    } else { #at the moment, didn't include options if more than 1 size scale is missing
+  #      updateSelectInput(session, "size", "Choose variable for point size:",
+  #                        c("MSY" = "MSY",
+  #                          "Catch" = "Catch",
+  #                          "Productivity" = "Surprod"))
+  #    }
   })
 
 
