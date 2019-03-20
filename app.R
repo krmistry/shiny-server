@@ -132,7 +132,7 @@ ui <- fluidPage(
                     value = min(split[[1]]$Year),
                     step = 1,
                     sep = "",
-                    animate = animationOptions(interval = 1500)), 
+                    animate = animationOptions(interval = 1000)), 
         selectInput("size", "Choose variable for point size:",
                     c("MSY" = "MSY",
                       "Catch" = "Catch",
